@@ -57,4 +57,12 @@ public abstract class BaseWages<M extends BaseWages<M>> extends Model<M> impleme
 		return get("create_time");
 	}
 
+	public void setMonth(java.lang.String month) {
+		set("month", month);
+	}
+	
+	public java.lang.String getMonth() {
+		return getStr("month");
+	}
+
 }

@@ -9,6 +9,9 @@ import org.apache.poi.ss.usermodel.Sheet;
 
 import com.demo.common.model.Wages;
 import com.jfinal.core.Controller;
+
+import cn.hutool.core.date.DateUnit;
+import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.StrUtil;
@@ -25,6 +28,8 @@ public class IndexController extends Controller {
 	public void index() {
 
 		ExcelReader reader = ExcelUtil.getReader(FileUtil.file("D:\\demo\\demo.xls"));
+		
+		String month = DateUtil.format(new Date(), "yyyy-MM");
 
 		List<Sheet> sheets = reader.getSheets();
 		System.out.println("sheet的表格数是：" + sheets.size());
@@ -84,6 +89,7 @@ public class IndexController extends Controller {
 					pojo.setAmount(new BigDecimal(je));
 					pojo.setCarno(kh);
 					pojo.setBank(yh);
+					pojo.setMonth(month);
 					pojo.save();
 					
 					System.out.println("第" + i + ":" + xm+":"+ je+":"+ kh+":"+ yh);
