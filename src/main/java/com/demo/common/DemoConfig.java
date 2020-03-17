@@ -19,10 +19,11 @@ import com.jfinal.template.Engine;
 /**
  * 本 demo 仅表达最为粗浅的 jfinal 用法，更为有价值的实用的企业级用法
  * 详见 JFinal 俱乐部: http://jfinal.com/club
- * 
+ * 2020-03-17 09:50:51 更新注释 by ghx
  * API 引导式配置
  */
 public class DemoConfig extends JFinalConfig {
+	
 	
 	static Prop p;
 	
